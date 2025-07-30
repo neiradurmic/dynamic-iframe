@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from './components/ui/dialog'
-import {Copy, Check} from 'lucide-react'
+import {Copy, Check, Sparkles} from 'lucide-react'
 import {PollBuilderTabs} from './components/PollBuilderTabs'
 
 function App() {
@@ -77,10 +77,10 @@ function App() {
     <Layout>
       <div className="space-y-8">
         <div className="text-center space-y-4">
-          <h1 className="text-4xl font-bold tracking-tight">
+          <h1 className="text-2xl lg:text-4xl font-bold tracking-tight">
             Create Online Polls
           </h1>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm lg:text-xl text-muted-foreground max-w-2xl mx-auto">
             Create free online polls with this quick and easy polling tool.
           </p>
         </div>
@@ -113,10 +113,13 @@ function App() {
           </div>
 
           {/* Poll Widget iframe - Right Column */}
-          <div className="space-y-6">
-            <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold">Embedded Poll Widget</h3>
+          <div className="space-y-2 lg:space-y-6">
+            <div className="rounded-lg border bg-card text-card-foreground shadow-sm lg:p-6">
+              <div className="flex items-center justify-between mb-4 px-6 pt-6 lg:px-0 lg:pt-0">
+                <div className="flex items-center gap-2">
+                  <Sparkles className="h-5 w-5 stroke-primary" />
+                  <h3 className="text-lg font-semibold">Preview</h3>
+                </div>
                 <button
                   onClick={() => {
                     const questionsParam = encodeURIComponent(
@@ -131,7 +134,7 @@ function App() {
                   Copy iframe
                 </button>
               </div>
-              <div className="relative w-full h-[600px] border rounded-lg overflow-hidden">
+              <div className="relative w-full h-[600px] lg:border rounded-lg overflow-hidden">
                 <iframe
                   ref={iframeRef}
                   src="/poll-widget"
@@ -146,10 +149,10 @@ function App() {
 
         {/* Instructions Modal */}
         <Dialog open={showInstructions} onOpenChange={setShowInstructions}>
-          <DialogContent className="sm:max-w-[600px]">
+          <DialogContent className="w-[95%] max-w-[600px] mx-auto">
             <DialogHeader>
               <DialogTitle>How to Use Your Poll Widget</DialogTitle>
-              <DialogDescription className="bg-third p-2 rounded text-white">
+              <DialogDescription className="mt-2 bg-third p-2 rounded text-white">
                 Your iframe code has been copied! Here's how to use it:
               </DialogDescription>
             </DialogHeader>
@@ -167,12 +170,17 @@ function App() {
                       setCopyStatus('Copied!')
                       setTimeout(() => setCopyStatus('Copy'), 2000)
                     }}
-                    className="px-3 py-1 bg-primary text-primary-foreground rounded text-xs font-medium hover:bg-primary/90 transition-colors cursor-pointer"
+                    className="px-3 py-1 bg-primary text-primary-foreground rounded text-xs font-medium hover:bg-primary/90 transition-colors cursor-pointer flex items-center gap-1"
                   >
+                    {copyStatus === 'Copy' ? (
+                      <Copy className="h-3 w-3" />
+                    ) : (
+                      <Check className="h-3 w-3" />
+                    )}
                     {copyStatus}
                   </button>
                 </div>
-                <div className="bg-muted p-3 rounded-md max-h-[200px] overflow-y-auto">
+                <div className="bg-muted p-3 rounded-md max-h-[140px] overflow-y-auto">
                   <code className="text-sm break-all">
                     {(() => {
                       const questionsParam = encodeURIComponent(
@@ -189,14 +197,6 @@ function App() {
                 <p className="text-sm">
                   Paste the code above into your HTML page where you want the
                   poll to appear.
-                </p>
-              </div>
-
-              <div className="space-y-2">
-                <h4 className="font-semibold">3. Customize & Update</h4>
-                <p className="text-sm">
-                  Use the controls on the left to customize your poll, then
-                  click "Copy iframe" again for updated code.
                 </p>
               </div>
             </div>

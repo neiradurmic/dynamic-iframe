@@ -31,7 +31,7 @@ export function PollBuilderTabs({
       <div className="flex border-b bg-muted/30">
         <button
           onClick={() => setActiveBuilderTab('theme')}
-          className={`flex-1 px-4 py-3 text-sm font-medium transition-colors cursor-pointer ${
+          className={`flex-1 px-4 py-4 text-sm lg:text-md font-medium transition-colors cursor-pointer ${
             activeBuilderTab === 'theme'
               ? 'bg-background text-foreground border-b-2 border-primary shadow-sm'
               : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
@@ -41,7 +41,7 @@ export function PollBuilderTabs({
         </button>
         <button
           onClick={() => setActiveBuilderTab('questions')}
-          className={`flex-1 px-4 py-3 text-sm font-medium transition-colors cursor-pointer ${
+          className={`flex-1 px-4 py-4 text-sm lg:text-md font-medium transition-colors cursor-pointer ${
             activeBuilderTab === 'questions'
               ? 'bg-background text-foreground border-b-2 border-primary shadow-sm'
               : 'text-muted-foreground hover:text-foreground hover:bg-muted/50'
@@ -52,7 +52,7 @@ export function PollBuilderTabs({
       </div>
 
       {/* Tab Content */}
-      <div className="p-6">
+      <div className=" lg:p-6">
         {activeBuilderTab === 'theme' && (
           <div className="animate-in fade-in-0 slide-in-from-top-2 duration-300">
             <CustomTheme

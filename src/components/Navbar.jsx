@@ -5,7 +5,7 @@ export function Navbar() {
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
-              <span className="font-medium text-lg bg-first p-2 rounded-xl">
+              <span className="flex-shrink-0 font-medium text-lg bg-first py-2 px-4 rounded-xl">
                 Dynamic iframe
               </span>
             </div>
@@ -19,7 +19,7 @@ export function Navbar() {
               >
                 View Demo
               </a>
-              <button className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 cursor-pointer">
+              <button className="hidden lg:inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2 cursor-pointer">
                 Custom Solutions
               </button>
             </div>

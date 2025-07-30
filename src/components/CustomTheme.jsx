@@ -202,7 +202,7 @@ export function CustomTheme({
   }
 
   return (
-    <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
+    <div className="rounded-lg lg:border bg-card text-card-foreground shadow-sm p-4 lg:p-6">
       <div className="flex items-center gap-2 mb-6">
         <Palette className="h-5 w-5" />
         <h3 className="text-lg font-semibold">Custom Theme</h3>

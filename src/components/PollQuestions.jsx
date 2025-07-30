@@ -132,16 +132,16 @@ export function PollQuestions({
   }
 
   return (
-    <div className="rounded-lg border bg-card text-card-foreground shadow-sm p-6">
-      <div className="flex items-center justify-between mb-6">
+    <div className="rounded-lg lg:border bg-card text-card-foreground shadow-sm p-4 lg:p-6">
+      <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 lg:items-center justify-between mb-6">
         <div className="flex items-center gap-2">
-          <HelpCircle className="h-5 w-5" />
-          <h3 className="text-lg font-semibold">Add Questions</h3>
+          <HelpCircle className="h-5 w-5 flex-shrink-0" />
+          <h3 className="flex-shrink-0 text-lg font-semibold">Add Questions</h3>
         </div>
         {pollQuestions.length < 5 && (
           <button
             onClick={addQuestion}
-            className="px-4 py-2 border border-input bg-background text-foreground rounded text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
+            className="flex-shrink-0 px-4 py-2 border border-input bg-background text-foreground rounded text-sm font-medium hover:bg-accent hover:text-accent-foreground transition-colors cursor-pointer"
           >
             + Add Question
           </button>
